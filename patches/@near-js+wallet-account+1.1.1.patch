@@ -1,0 +1,33 @@
+diff --git a/node_modules/@near-js/wallet-account/lib/wallet_account.d.ts b/node_modules/@near-js/wallet-account/lib/wallet_account.d.ts
+index fc076be..19f93a5 100644
+--- a/node_modules/@near-js/wallet-account/lib/wallet_account.d.ts
++++ b/node_modules/@near-js/wallet-account/lib/wallet_account.d.ts
+@@ -8,9 +8,9 @@
+ import { Account, Connection, SignAndSendTransactionOptions } from '@near-js/accounts';
+ import { PublicKey } from '@near-js/crypto';
+ import { KeyStore } from '@near-js/keystores';
+-import { FinalExecutionOutcome } from '@near-js/types';
+ import { Transaction, Action } from '@near-js/transactions';
+ import { Near } from './near';
++import { TxOutcome } from '@near-js/types';
+ interface SignInOptions {
+     contractId?: string;
+     methodNames?: string[];
+@@ -179,7 +179,7 @@ export declare class ConnectedWalletAccount extends Account {
+      * @param options.walletMeta Additional metadata to be included in the wallet signing request.
+      * @param options.walletCallbackUrl URL to redirect upon completion of the wallet signing process. Default: current URL.
+      */
+-    signAndSendTransaction({ receiverId, actions, walletMeta, walletCallbackUrl }: SignAndSendTransactionOptions): Promise<FinalExecutionOutcome>;
++    signAndSendTransaction({ receiverId, actions, walletMeta, walletCallbackUrl }: SignAndSendTransactionOptions): Promise<TxOutcome>;
+     /**
+      * Check if given access key allows the function call or method attempted in transaction
+      * @param accessKey Array of \{access_key: AccessKey, public_key: PublicKey\} items
+diff --git a/node_modules/@near-js/wallet-account/lib/wallet_account.d.ts.map b/node_modules/@near-js/wallet-account/lib/wallet_account.d.ts.map
+index 843050a..09287e3 100644
+--- a/node_modules/@near-js/wallet-account/lib/wallet_account.d.ts.map
++++ b/node_modules/@near-js/wallet-account/lib/wallet_account.d.ts.map
+@@ -1 +1 @@
+-{"version":3,"file":"wallet_account.d.ts","sourceRoot":"","sources":["../src/wallet_account.ts"],"names":[],"mappings":"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"}
+\ No newline at end of file
++{"version":3,"file":"wallet_account.d.ts","sourceRoot":"","sources":["../src/wallet_account.ts"],"names":[],"mappings":"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"}
+\ No newline at end of file
